@@ -1,5 +1,9 @@
-//questions
+let startBtn = document.getElementById("startBtn")
+let menu = document.getElementById("menu")
+let holder = document.getElementById("holder")
 
+console.log(startBtn)
+    //questions
 let qObj = [{
         question: "Coal is to water as a lightbulb is to :",
         answers: ["Water", "Coal", "Wet Coal"],
@@ -32,17 +36,31 @@ let qObj = [{
     }
 ];
 
+
+function begin() {
+    startBtn.addEventListener("click", function() {
+        menu.style.display = "none";
+        holder.style.display = "inline-block";
+    })
+}
+
+begin()
+
 function looper(qObj) {
-    console.log(qObj.length)
-        // console.log(qObj.question)
+    // console.log(qObj.length)
+    // console.log(qObj.question)
 
     for (let i = 0; i < qObj.length; i++) {
-        console.log(qObj[i].question)
-        console.log(qObj[i].answers)
+        document.getElementById("holder").innerHTML = qObj[i].question;
+        document.getElementById("holder").innerHTML = qObj[i].answers
         console.log(qObj[i].correct)
+            // console.log(qObj[i].question)
+            // console.log(qObj[i].answers)
+            // console.log(qObj[i].correct)
 
     }
 
 }
+
 
 looper(qObj);
